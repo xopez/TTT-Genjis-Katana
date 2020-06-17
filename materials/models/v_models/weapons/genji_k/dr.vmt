@@ -1,0 +1,18 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\v_models\weapons\genji_k\dr"
+	"$bumpmap" "models\v_models\weapons\genji_k\dr_n"
+"$PhongExponentTexture" "models\v_models\weapons\genji_k\dr_e"
+"$envmap" "env_cubemap"
+"$envmapfresnel" 			"1"
+"$envmapFresnelMinMaxExp"		"[10 10 10]"
+"$envmaptint" "[2.02 2.53 0.68]"
+"$phong" 		"1"
+"$phongalbedotint"			"1"
+"$phongalbedoboost"			"25"
+"$phongboost" "33"
+"$phongfresnelranges" "[1.5 4.8 7.9]"
+"$nocull" "1"
+"$alphatest" "1"
+"$selfillum" 1
+}

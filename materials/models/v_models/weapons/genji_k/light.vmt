@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\v_models\weapons\genji_k\light"
+	"$selfillum" 1
+        "$additive" 1
+        "$nocull"       "1"
+}

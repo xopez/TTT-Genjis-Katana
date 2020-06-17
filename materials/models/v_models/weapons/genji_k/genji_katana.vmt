@@ -1,0 +1,38 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\v_models\weapons\genji_k\genji_katana"
+	"$bumpmap" "models\v_models\weapons\genji_k\genji_katana_n"
+        "$PhongExponentTexture" "models\v_models\weapons\genji_k\genji_katana_e"
+	"$envmap"			"env_cubemap"
+	 $envmaptint        "[.1 .1 .1]"
+	"$envmapfresnel"			"1"
+	"$envmapFresnelMinMaxExp"			"[1 1 1]"
+	"$normalmapalphaenvmapmask" 	"1"
+ 	"$phong" 			"1"
+	"$phongboost" 			"2"
+	"$phongfresnelranges"		"[1 3 9]"
+	"$phongalbedotint" 			"1"
+        "$phongalbedoboost" "10"
+	"$rimlightexponent"   "30" 
+	"$rimlightboost"   "1"
+	"$rimmask"      "1"
+	"$selfillum" 1
+         $selfillumtint "[0.5 0.5 0.5]"
+$detail "models/infected/hunter/hunter_01_detail.vtf"
+$detailscale "1.75"
+$detailblendfactor .001 
+$detailblendmode 0
+$detailAmount 0
+Proxies
+{
+BloodyHands
+{
+resultVar $detailAmount
+}
+Equals
+{
+srcVar1 $detailAmount
+resultVar $detailblendfactor
+}
+}
+}
