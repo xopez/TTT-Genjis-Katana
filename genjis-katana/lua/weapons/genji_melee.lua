@@ -401,12 +401,11 @@ if CLIENT then
 	function SWEP:UpdateBonePositions(vm)
 		if self.ViewModelBoneMods then
 			if (!vm:GetBoneCount()) then return end
-			-- !! WORKAROUND !!
-			-- We need to check all model names :/
+			-- !! WORKAROUND !! 
 			local loopthrough = self.ViewModelBoneMods
 			if (!hasGarryFixedBoneScalingYet) then
 				allbones = {}
-				for i=0, vm:GetBoneCount() do
+				for i=0, vm:GetBoneCount()-1 do
 					local bonename = vm:GetBoneName(i)
 					if (self.ViewModelBoneMods[bonename]) then 
 						allbones[bonename] = self.ViewModelBoneMods[bonename]
@@ -454,7 +453,7 @@ if CLIENT then
 	end
 	function SWEP:ResetBonePositions(vm)
 		if (!vm:GetBoneCount()) then return end
-		for i=0, vm:GetBoneCount() do
+		for i=0, vm:GetBoneCount()-1 do
 			vm:ManipulateBoneScale( i, Vector(1, 1, 1) )
 			vm:ManipulateBoneAngles( i, Angle(0, 0, 0) )
 			vm:ManipulateBonePosition( i, Vector(0, 0, 0) )
@@ -466,7 +465,7 @@ if CLIENT then
 	-- WARNING: do not use on tables that contain themselves somewhere down the line or you'll get an infinite loop
 	function table.FullCopy( tab )
 		if (!tab) then return nil end	
-		local res = {}‚
+		local res = {}
 		for k, v in pairs( tab ) do
 			if (type(v) == "table") then
 				res[k] = table.FullCopy(v) -- recursion ho!
