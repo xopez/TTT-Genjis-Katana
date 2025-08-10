@@ -116,8 +116,8 @@ function SWEP:Slash()
 			start = pos,
 			endpos = pos + (ang * 120),
 			filter = self.Owner,
-			mins = Vector(-20, -20, -4), -- Hitbox leicht vergrößert
-			maxs = Vector(20, 20, 20)    -- Hitbox leicht vergrößert
+			mins = Vector(-20, -20, -4),
+			maxs = Vector(20, 20, 20)
 		}
 		local slashtrace = util.TraceHull(slash)
 		if slashtrace.Hit then
