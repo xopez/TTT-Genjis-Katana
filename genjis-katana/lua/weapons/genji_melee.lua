@@ -356,7 +356,7 @@ if CLIENT then
 			if (m) then
 				pos, ang = m:GetTranslation(), m:GetAngles()
 			end
-			if (IsValid(self.Owner) and self.Owner:IsPlayer() and 
+			if (IsValid(self.Owner) and self.Owner:IsPlayer() and
 				ent == self.Owner:GetViewModel() and self.ViewModelFlip) then
 				ang.r = -ang.r -- Fixes mirrored models
 			end
@@ -401,16 +401,16 @@ if CLIENT then
 	function SWEP:UpdateBonePositions(vm)
 		if self.ViewModelBoneMods then
 			if (!vm:GetBoneCount()) then return end
-			-- !! WORKAROUND !! 
+			-- !! WORKAROUND !!
 			local loopthrough = self.ViewModelBoneMods
 			if (!hasGarryFixedBoneScalingYet) then
 				allbones = {}
 				for i=0, vm:GetBoneCount()-1 do
 					local bonename = vm:GetBoneName(i)
-					if (self.ViewModelBoneMods[bonename]) then 
+					if (self.ViewModelBoneMods[bonename]) then
 						allbones[bonename] = self.ViewModelBoneMods[bonename]
 					else
-						allbones[bonename] = { 
+						allbones[bonename] = {
 							scale = Vector(1,1,1),
 							pos = Vector(0,0,0),
 							angle = Angle(0,0,0)
@@ -464,7 +464,7 @@ if CLIENT then
 	-- Does not copy entities of course, only copies their reference.
 	-- WARNING: do not use on tables that contain themselves somewhere down the line or you'll get an infinite loop
 	function table.FullCopy( tab )
-		if (!tab) then return nil end	
+		if (!tab) then return nil end
 		local res = {}
 		for k, v in pairs( tab ) do
 			if (type(v) == "table") then
